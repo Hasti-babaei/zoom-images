@@ -34,9 +34,7 @@
                 this.style.backgroundSize='250%';
 
             })
-            // document.querySelector('body').addEventListener('mousemove',function(){
-            //     console.log(getBoundingClientRect())
-            // })
+
             zoomedImage.addEventListener('mousemove',function(e){
             
                 let dimentions=this.getBoundingClientRect();
@@ -47,16 +45,15 @@
                this.style.backgroundPosition=`${x}% ${y}%`
 
             })
+
             zoomedImage.addEventListener('mouseleave' , function(){
                 this.style.backgroundSize='cover'
                 this.backgroundPosition='center'
             })
         }
     })
-
+    
     if(typeof(vanillaZoom) == 'undefined') {
         window.vanillaZoom = defineLibrary();
-    } else {
-        console.log('library already defined.')
-    }
+    } 
 })(window)
